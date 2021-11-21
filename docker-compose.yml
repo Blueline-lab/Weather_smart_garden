@@ -1,0 +1,44 @@
+version: "3"
+services:
+  mongo:
+    restart: always
+    image: mongo
+    container_name: mongodb_smartgarden
+    ports:
+    - "27017:27017"
+    volumes:
+       - "./data/db:/data/db"
+    networks:
+       - reseau_bd
+    command: mongod --auth
+
+
+  smart_garden_app:
+    restart: always
+    image: 199245480/smart_garden:version1.1       
+    container_name: smartgarden_app
+    depends_on:
+    - "mongo"
+    privileged: true
+    networks:
+    - reseau_bd
+    environment:
+    - EGN=1
+    - HOUR="19"
+    - WATERDEB1 =3000
+    - WATERDEB2 =2000
+    - WATERDEB3 =1000
+    - DB_ADDRESS=mongodb_smartgarden
+    - DB_PORT=27017
+    - DB_NAME=smart_garden
+    - DB_USER=app
+    - DB_PASSWD=abkeycv 
+    volumes:
+       - "./Smart_Arrosage_Auto:/app"
+    command: bash -c "cd /app && python3 main.py"
+
+
+networks:
+  reseau_bd:
+    driver: bridge
+
