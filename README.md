@@ -7,7 +7,9 @@ If the rain was equal to an interval of X to Y < 5mm the bot will watering your 
 Configure Z values in the docker-compose.yml by modifying the env variables WATERDEB1, WATERDEB2, WATERDEB3.
 
 The X to Y values equal to zero indicate no rain during the day and will active the watering by Z seconds define by WATERDEB1.
+
 The X to Y values equal to 0-2 indiquate 0 to 2 millimeters of rain in the day and will active the watering by Z seconds define by WATERDEB2.
+
 The X to Y values equal to 2-5 indiquate 2 to 5 millimeters of rain in the day and will active the watering by Z seconds define by WATERDEB2.
 
 When a no rain or few rainy day is tiggered the engine module will process the watering at time define in the docker-compose.yml, define watering hour in the day by modifying the environnement variable HOUR.
