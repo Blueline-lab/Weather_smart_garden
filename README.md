@@ -20,7 +20,9 @@ The main program will open GPIO PIN 4 and activate a relay. This relay will open
 # Versions
 There is two version with data persistence and without data persistence: 
 
-* After the main process in Version1 (branch main) the Mongodb function will save (on a Mongodb server define in the Mongodb module) the millimeter interval of    
-  precipitation during the day, date & time, the watering duration. And the main program will clean GPIO pin and wait for the next check.
+* After the main process in Version1 (branch main) the Mongodb function will save (on a Mongodb server define in the Mongodb module) 
+  the millimeter interval of precipitation during the day, date & time, the watering duration. 
+  
+  Finnaly the main program will clean GPIO pin and wait for the next check.
 
 * After the main process in version1.1 (branch no_db) The main program will clean GPIO pin and wait for the next check.
