@@ -31,8 +31,8 @@ services:
     - DB_ADDRESS=mongodb_smartgarden
     - DB_PORT=27017
     - DB_NAME=smart_garden
-    - DB_USER=app
-    - DB_PASSWD=abkeycv 
+    - DB_USER=smart_garden
+    - DB_PASSWD=pass
     volumes:
        - "./Smart_Arrosage_Auto:/app"
     command: bash -c "cd /app && python3 main.py"
