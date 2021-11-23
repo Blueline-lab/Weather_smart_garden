@@ -1,6 +1,10 @@
 # Weather_smart_garden
 
-Weather smart garden is a wattering bot who will check the weather of the current day, if the rain was equal to X to Y < 5mm the bot will watering your garden during Z seconds. Configure Z values in the docker-compose.yml by modifying the env variables WATERDEB1, WATERDEB2, WATERDEB3.
+Weather smart garden is a wattering bot.
+It will checking the weather of the current day for watering your garden. 
+
+If the rain was equal to an interval of X to Y < 5mm the bot will watering your garden during Z seconds. 
+Configure Z values in the docker-compose.yml by modifying the env variables WATERDEB1, WATERDEB2, WATERDEB3.
 
 The X to Y values equal to zero indicate no rain during the day and will active the watering by Z seconds define by WATERDEB1.
 The X to Y values equal to 0-2 indiquate 0 to 2 millimeters of rain in the day and will active the watering by Z seconds define by WATERDEB2.
